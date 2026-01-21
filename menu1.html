@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Popeye Pizza n Kebab | Luxury Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#3B563F;
+  --green-soft:#EAF1EC;
+  --gold:#C9A24D;
+  --white:#FFFFFF;
+  --text-dark:#2A3B2E;
+  --button-text:#000000;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:var(--white);
+  color:var(--text-dark);
+}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--green);
+  padding:16px 22px;
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+/* ===== LOGO ===== */
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-img{
+  height:50px;
+}
+
+.logo-text{
+  font-family:'Cinzel', serif;
+  font-size:22px;
+  color:#fff;
+  letter-spacing:1px;
+}
+
+/* ===== NAV BAR FIX ===== */
+header nav{
+  display:flex;              /* 🔑 FIX */
+  align-items:center;
+  gap:12px;
+}
+
+/* ===== NAV BUTTONS ===== */
+button.nav-btn{
+  background-color:var(--gold);
+  border:1px solid var(--button-text);
+  position:relative;
+  min-width:7em;
+  height:2.3em;
+  padding:4px 16px 4px 40px;
+  border-radius:.4em;
+  cursor:pointer;
+  transition:.4s;
+  font-size:15px;
+  font-weight:500;
+  overflow:hidden;
+}
+
+/* Text */
+button.nav-btn p{
+  position:absolute;
+  top:.4em;
+  left:1.7em;
+  margin:0;
+  color:var(--button-text);
+  transition:.4s;
+}
+
+/* Emoji */
+button.nav-btn span{
+  position:absolute;
+  top:.45em;
+  right:.7em;
+  font-size:17px;
+  opacity:0;
+  transition:.4s;
+}
+
+/* Hover */
+button.nav-btn:hover{
+  background-color:var(--gold);
+}
+
+button.nav-btn:hover p{
+  left:.5em;
+  color:#000;
+}
+
+button.nav-btn:hover span{
+  opacity:1;
+}
+.halal{
+  height:46px;
+  border-radius:6px;
+}
+
+/* ================= CATEGORY BUTTONS ================= */
+.buttons{
+  text-align:center;
+  margin:30px 0;
+}
+
+.btn{
+  background:var(--gold);
+  color:#000;
+  border:none;
+  padding:10px 18px;
+  margin:6px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:15px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:0 25px 40px;
+}
+
+.section-title{
+  font-family:'Cinzel', serif;
+  font-size:28px;
+  color:var(--green);
+  margin:40px 0 8px;
+  border-left:5px solid var(--gold);
+  padding-left:12px;
+}
+
+.section-note{
+  font-size:14px;
+  opacity:.8;
+  margin-bottom:20px;
+}
+
+/* ================= MENU GRID ================= */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+/* ================= CARD ================= */
+.card{
+  background-color: #3B563F;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:16px;
+}
+
+.card h3{
+  margin:0;
+  font-weight:500;
+  color: #FFFFFF;
+}
+
+.card p{
+  font-size:13px;
+  opacity:.8;
+  margin:6px 0;
+    color: #FFFFFF;
+
+}
+
+.price{
+  color:var(--gold);
+  font-weight:600;
+}
+
+
+/* ================= FOOTER ================= */
+footer{
+  background:var(--green);
+  color:#fff;
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  margin-top:40px;
+}
+.nav-btn{
+  background-color:#C9A24D;
+  border:1px solid rgba(0,0,0,.35);
+  color:#000;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  overflow:hidden;
+  transition: background .3s, transform .3s;
+}
+
+/* Default: hide emoji */
+.nav-btn span{
+  opacity:0;
+  transition:opacity .3s ease .1s;
+  font-size:16px;
+}
+
+/* Text always visible */
+.nav-btn p{
+  margin:0;
+  font-size:14px;
+}
+
+/* Hover: show emoji */
+.nav-btn:hover{
+  background:#b8943f;
+  transform:translateY(-2px);
+}
+
+.nav-btn:hover span{
+  opacity:1;
+}
+
+/* ================= UTIL ================= */
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-top">
+
+    <div class="logo-wrap">
+      <img src="images/kindpng_2290808.webp" class="logo-img" alt="">
+      <span class="logo-text">POPEYES PIZZA ’N’ KEBAB</span>
+    </div>
+
+    <nav>
+      <button class="nav-btn" onclick="location.href='index.html'">
+        <p>Home</p><span>🏠</span>
+      </button>
+
+      <button class="nav-btn" onclick="location.href='about.html'">
+        <p>About</p><span>ℹ️</span>
+      </button>
+
+      <button class="nav-btn" onclick="location.href='menu1.html'">
+        <p>Menu</p><span>🍕</span>
+      </button>
+
+      <button class="nav-btn" onclick="location.href='contact.html'">
+        <p>Contact</p><span>📞</span>
+      </button>
+    </nav>
+
+    <img src="images/halal.jpg" class="halal" alt="Halal">
+
+  </div>
+</header>
+
+<!-- ===== CATEGORY BUTTONS ===== -->
+<div class="buttons">
+  <button class="btn" onclick="show('pizzas')">🍕 Pizzas</button>
+  <button class="btn" onclick="show('kebabs')">🥙 Kebabs</button>
+  <button class="btn" onclick="show('hsp')">🍟 HSP</button>
+  <button class="btn" onclick="show('meals')">🍽 Meals</button>
+  <button class="btn" onclick="show('kids')">🧒 Kids</button>
+  <button class="btn" onclick="show('gozleme')">🫓 Gozleme</button>
+  <button class="btn" onclick="show('sides')">🍟 Sides</button>
+  <button class="btn" onclick="show('salads')">🥗 Salads</button>
+  <button class="btn" onclick="show('drinks')">🍹 Drinks</button>
+  <button class="btn" onclick="show('deserts')">🍰 Deserts</button>
+
+
+</div>
+
+<!-- ================= PIZZAS ================= -->
+<div class="cards hidden" id="pizzas">
+  <div class="section-title">🍕 Pizzas</div>
+  <div class="section-note">Freshly baked pizzas</div>
+
+  <div class="menu-grid">
+    <div class="card"><img src="images/12435310-Classic-pizza-margherita-made-with-a-sourdough-base-tomato-sauce-with-oregano-and-olive-oil-mozzarella-cheese.jpg"><div class="card-content"><h3>Margarita</h3><div class="price">$14</div></div></div>
+    <div class="card"><img src="images/veg delight.jpg"><div class="card-content"><h3>Veg Delight</h3><div class="price">$15</div></div></div>
+    <div class="card"><img src="images/delicious-pizza-topped-spicy-sauce-chili-peppers-ground-meat-served-black-plate-364744897.webp"><div class="card-content"><h3>Spicy Veg</h3><div class="price">$15</div></div></div>
+    <div class="card"><img src="images/7602a3d88b2aeb0053954d96be9a9829.avif"><div class="card-content"><h3>Chicken Deluxe</h3><div class="price">$17</div></div></div>
+    <div class="card"><img src="images/spicy chicken.webp"><div class="card-content"><h3>Spicy Chicken</h3><div class="price">$17</div></div></div>
+    <div class="card"><img src="images/hawaiian-bbq-chicken-pizza4-srgb..jpg"><div class="card-content"><h3>BBQ Chicken</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/wk23-dinner-made-easy-aussie-pizza.webp"><div class="card-content"><h3>Aussie</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/Hawaiian-Pizza-Recipe-1.jpg"><div class="card-content"><h3>Hawaiian</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/Pepperoni-Pizza-1.jpg"><div class="card-content"><h3>Pepperoni</h3><div class="price">$17</div></div></div>
+    <div class="card"><img src="images/veggie-pizza-6.jpg"><div class="card-content"><h3>Supreme</h3><div class="price">$19</div></div></div>
+  </div>
+</div>
+
+<!-- ================= KEBABS ================= -->
+ 
+<div class="cards" id="kebabs">
+  <div class="section-title">🥙 Kebabs</div>
+  <div class="section-note">All kebabs include lettuce, tomato, onion & choice of sauces</div>
+
+  <div class="menu-grid">
+    <div class="card"><img src="images/lamb kebab.jpg"><div class="card-content"><h3>Lamb Kebab</h3><div class="price">$14</div></div></div>
+    <div class="card"><img src="images/chicken-skewers-with-slices-apples-chili.jpg"><div class="card-content"><h3>Chicken Kebab</h3><div class="price">$14</div></div></div>
+    <div class="card"><img src="C:\popeye\images\top-view-delicious-kebab-slate-with-salad-ketchup.jpg"><div class="card-content"><h3>Mix Kebab</h3><div class="price">$14</div></div></div>
+    <div class="card"><img src="images/tortilla-wrap-with-falafel-fresh-salad-vegan-tacos-vegetarian-healthy-food.jpg"><div class="card-content"><h3>Falafel</h3><div class="price">$14</div></div></div>
+    <div class="card"><img src="images/imitation-crab-stick-fresh-vegetable-salad-rolls.jpg"><div class="card-content"><h3>Salad Roll</h3><div class="price">$13</div></div></div>
+  </div>
+<div class="section-green">
+
+  <div class="section-title">🔥 Grilled Kebabs</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/lamb shish.jpg"><div class="card-content"><h3>Lamb Shish</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/chicken grilled.jpg"><div class="card-content"><h3>Chicken Shish</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/top-view-raw-chicken-skewers-with-spices-wooden-board-dark-table.jpg"><div class="card-content"><h3>Mix Shish</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/high-angle-tasty-kebab-slate-with-other-dish-tomatoes.jpg"><div class="card-content"><h3>Adana</h3><p>Spicy minced lamb skewer</p><div class="price">$16</div></div></div>
+    <div class="card"><img src="images/kofte.jpg"><div class="card-content"><h3>Kofte</h3><p>Beef & lamb meatballs</p><div class="price">$16</div></div></div>
+  </div>
+</div>
+  <div class="section-title">➕ Extras</div>
+  <div class="extras">
+    🥩 Extra Meat — $3<br>
+    🍢 Extra Skewer — $7<br>
+    🧀 Cheese Dip — $2
+  </div>
+</div>
+
+<!-- ================= HSP ================= -->
+<div class="cards hidden" id="hsp">
+  <div class="section-title">🍟 HSP</div>
+    <div class="section-note">Choice of meal served on hot chips, cheese and choice of 3 souces</div>
+
+  <div class="menu-grid">
+    <div class="card"><img src="images/pexels-ahmedbhutta11-7703785.jpg"><div class="card-content"><h3>Original</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/pexels-jdgromov-12916869.jpg"><div class="card-content"><h3>Rice HSP</h3><div class="price">$19</div></div></div>
+    <div class="card"><img src="images/pexels-nano-erdozain-120534369-29306495.jpg"><div class="card-content"><h3>Salad HSP</h3><div class="price">$19</div></div></div>
+  </div>
+</div>
+
+<!-- ================= MEALS ================= -->
+<div class="cards hidden" id="meals">
+  <div class="section-title">🍽 Meals</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/kebab meal.jpg"><div class="card-content"><h3>Kebab Meal</h3><p>Lamb, chicken or mix • rice, salad, bread & 2 dips</p><div class="price">$24</div></div></div>
+    <div class="card"><img src="images/turkish-arabic-traditional-ramadan-mix-kebab-plate-kebab-adana-chicken-lamb-beef-lavash-bread-with-sauce-top-view (1).jpg"><div class="card-content"><h3>Iskender</h3><p>lamb doner kebab served on a layer of diced turkish bread with a layer of yogurt and special tomato sauce</p><div class="price">$24</div></div></div>
+    <div class="card"><img src="images/pexels-change-c-c-974768353-20150366.jpg"><div class="card-content"><h3>Shish Meal</h3><p>choice of lamb,chicken,or mixed shish served with salad two dips,and rice aanbd bread</p><div class="price">$27</div></div></div>
+    <div class="card"><img src="images/adana meal.jpg"><div class="card-content"><h3>Adana Meal</h3><p>spicy long minced meal served eith salad, two dips,rice, and bread</p><div class="price">$25</div></div></div>
+    <div class="card"><img src="images/kofte meal.jpg"><div class="card-content"><h3>Kofte Meal</h3><p>grilled lamb mince patties served with salad,two dips,rice and bread</p><div class="price">$25</div></div></div>
+    <div class="card"><img src="images/mix grill.jpg"><div class="card-content"><h3>Mix Grill</h3><p>all served with choice of rice,salad,dip and pide bread,combination of lamb,chicken shish,lamb cutlet,koffe,dip,salad and pride bread</p><div class="price">$38</div></div></div>
+    <div class="card"><img src="images/tortilla-wrap-with-falafel-fresh-salad-vegan-tacos-vegetarian-healthy-food.jpg"><div class="card-content"><h3>Falafel Meal</h3><p>veggie patties served with salad,two dips,chips,rice & bread</p><div class="price">$22</div></div></div>
+    <div class="card"><img src="images/pexels-ahmedbhutta11-7703785.jpg"><div class="card-content"><h3>Healthy Pack</h3><p>choice of lamb,chicken, or mixed shish served with salad</p><div class="price">$17</div></div></div>
+  </div>
+</div>
+
+<!-- ================= KIDS ================= -->
+<div class="cards hidden" id="kids">
+  <div class="section-title">🧒 Kids Meals</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/pexels-enginakyurt-5374414.jpg"><div class="card-content"><h3>Nuggets Meal</h3><p>6 pieces nuggets served with chips,rice& kid drinks</p><div class="price">$17</div></div></div>
+    <div class="card"><img src="images/kids meal.jpg"><div class="card-content"><h3>Doner Kids Meal</h3><p>choice of kebab served with chips,rice & kid drinks</p><div class="price">$17</div></div></div>
+  </div>
+</div>
+
+<!-- ================= GOZLEME ================= -->
+<div class="cards hidden" id="gozleme">
+  <div class="section-title">🫓 Gozleme</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/cheese gozleme.jpg"><div class="card-content"><h3>Cheese</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="C:\popeye\images\spinach gozleme.jpg"><div class="card-content"><h3>Cheese & Spinach</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/meat gozleme.jpg"><div class="card-content"><h3>Meat</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/turkish gozleme.avif"><div class="card-content"><h3>Turkish Salami</h3><div class="price">$18</div></div></div>
+    <div class="card"><img src="images/mushroom gozleme.png"><div class="card-content"><h3>Chicken & Mushroom</h3><div class="price">$18</div></div></div>
+  </div>
+</div>
+
+<!-- ================= SIDES ================= -->
+<div class="cards hidden" id="sides">
+  <div class="section-title">🍟 Sides</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/chips.jpg"><div class="card-content"><h3>Chips </h3><div class="price">$5/$10</div></div></div>
+    <div class="card"><img src="images/rice.avif"><div class="card-content"><h3>Rice </h3><div class="price">$5/$6</div></div></div>
+        <div class="card"><img src="images/garlic bread.jpg"><div class="card-content"><h3>Garlic Bread </h3><div class="price">$5</div></div></div>
+    <div class="card"><img src="images/chicken wings.jpg"><div class="card-content"><h3>Chicken wings </h3><p>6 pieces</p><div class="price">$11.50</div></div></div>
+    <div class="card"><img src="images/onion rings.jpg"><div class="card-content"><h3>Onion rings </h3><p>10 pieces</p><div class="price">$8</div></div></div>
+    <div class="card"><img src="images/nuggets6.webp"><div class="card-content"><h3>Nuggets </h3><p>6 pieces</p><div class="price">$8</div></div></div>
+
+  </div>
+</div>
+
+<!-- ================= SALADS ================= -->
+<div class="cards hidden" id="salads">
+  <div class="section-title">🥗 Salads</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/greek salad.jpg"><div class="card-content"><h3>Greek Salad</h3><div class="price">$6 / $8</div></div></div>
+    <div class="card"><img src="images/tabouli.jpeg"><div class="card-content"><h3>Tabouli</h3><div class="price">$6 / $8</div></div></div>
+    <div class="card"><img src="images/garden.avif"><div class="card-content"><h3>Garden Salad</h3><div class="price">$6 / $8</div></div></div>
+  </div>
+</div>
+<div class="cards hidden" id="drinks">
+  <div class="section-title">🍹 Drinks</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/drinks1.jpg"><div class="card-content"><h3>375ml / 500ml Can</h3><div class="price">$3.50/$5.50</div></div></div>
+    <div class="card"><img src="images/kids.jpg"><div class="card-content"><h3>Kids</h3><div class="price">$4</div></div></div>
+    <div class="card"><img src="images/aryan.jpg"><div class="card-content"><h3>Aryan</h3><div class="price">$4.5</div></div></div>
+  </div>
+</div>
+<div class="cards hidden" id="deserts">
+  <div class="section-title">🍰 Deserts</div>
+  <div class="menu-grid">
+    <div class="card"><img src="images/oreo.jpg"><div class="card-content"><h3>Belguim Choclate & oreo pudding</h3><div class="price">$12.50</div></div></div>
+    <div class="card"><img src="images/caramel.jpg"><div class="card-content"><h3>Caramel Custard & Bischoff pudding</h3><div class="price">$12.50</div></div></div>
+  </div>
+</div>
+
+</section>
+
+<footer>
+⚓ Eat Strong • Sailor Style • © 2026 Popeye Pizza n Kebab
+</footer>
+
+<script>
+function show(id){
+  document.querySelectorAll('.cards').forEach(c=>c.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>

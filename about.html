@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Popeyes Pizza ’N’ Kebab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#3B563F;
+  --gold:#C9A24D;
+  --white:#FFFFFF;
+  --text-dark:#2A3B2E;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:var(--white);
+  color:var(--text-dark);
+}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--green);
+  padding:16px 22px;
+}
+
+.header-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-img{height:50px;}
+
+.logo-text{
+  font-family:'Cinzel', serif;
+  font-size:22px;
+  color:#fff;
+}
+
+button.nav-btn, .btn{
+    background-color: #C9A24D;
+  border:1px solid var(--button-text);
+  position:relative;
+  min-width:7em;
+  height:2.3em;
+  padding:4px 16px 4px 40px;
+  border-radius:.4em;
+  cursor:pointer;
+  transition:.4s;
+  font-size:15px;
+  font-weight:500;
+  overflow:hidden;
+}
+
+button.nav-btn p, .btn p{
+  position:absolute;
+  top:.4em;
+  left:1.7em;
+  margin:0;
+  color:var(--button-text);
+  transition:.4s;
+}
+
+button.nav-btn span, .btn span{
+  position:absolute;
+  top:.45em;
+  right:.7em;
+  font-size:17px;
+  opacity:0;
+  transition:.4s;
+}
+
+button.nav-btn:hover, .btn:hover{
+  background-color: #C9A24D;
+}
+
+button.nav-btn:hover p, .btn:hover p{
+  left:.5em;
+  color:#000000;
+}
+
+button.nav-btn:hover span, .btn:hover span{
+  opacity:1;
+}
+
+.halal{height:46px;}
+
+/* ===== HERO ===== */
+.about-hero{
+  background:linear-gradient(
+    rgba(255,255,255,.85),
+    rgba(255,255,255,.85)
+  ),
+  url("images/about-bg.jpg") center/cover no-repeat;
+
+  padding:40px 60px;
+  display:flex;                 /* KEY */
+  align-items:center;
+  justify-content:space-between;
+  gap:450px;
+}
+
+.about-hero h1{
+  font-family:'Cinzel', serif;
+  font-size:44px;
+  color:#000;
+  max-width:800px;
+  padding-left: 50px;
+}
+
+.split-img{
+  flex-shrink:0;
+}
+
+.split-img img{
+  width:50px;                  /* control image size */
+  max-width:80%;
+}
+
+
+/* ===== SPLIT SECTIONS ===== */
+.split{
+  max-width:1600px;
+  margin:auto;
+  padding:80px 20px;
+  display:flex;
+  align-items:center;
+  gap:50px;
+  background-color: #3B563F;
+}
+
+.split.reverse{
+  flex-direction:row-reverse;
+  background-color: #fff;
+}
+
+.split-text{
+  flex:1;
+    color:#fff;
+
+}
+
+.split-text h2{
+  font-family:'Cinzel', serif;
+  font-size:30px;
+  color:#fff
+}
+
+.split-text p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+.split-img{
+  flex:1;
+}
+
+.split-img img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+/* ===== HIGHLIGHT ===== */
+.highlight{
+  background:var(--green);
+  color:#fff;
+  padding:70px 20px;
+  text-align:center;
+}
+
+.highlight p{
+  max-width:900px;
+  margin:auto;
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--green);
+  color:#fff;
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+}
+.split-text1{
+    color: #000000;
+}
+.split{
+  display:flex;
+  align-items:center;
+  gap:60px;
+  padding:80px 60px;
+  max-width:1600px;
+  margin:auto;
+}
+
+.split-text{
+  flex:1;
+}
+
+.split h2{
+  font-family:'Cinzel', serif;
+  font-size:32px;
+  color:#3B563F;
+  margin-bottom:12px;
+}
+
+.split p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+.split-img{
+  flex:1;
+  text-align:center;
+}
+
+.split-img img{
+  width:320px;
+  max-width:100%;
+  border-radius:12px;
+}
+
+/* Text */
+.split-text2{
+  flex:1;
+}
+
+.split-text2 h2{
+  font-family:'Cinzel', serif;
+  font-size:30px;
+  color:#3B563F;
+  margin-bottom:14px;
+}
+
+.split-text2 p{
+  font-size:16px;
+  line-height:1.8;
+  opacity:.9;
+}
+
+/* Image */
+.split-img1{
+  flex:1;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.split-img1 img{
+  width:420px;
+  max-width:100%;
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+/* Reverse class (OPTIONAL for other sections) */
+.split.reverse{
+  flex-direction:row;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .split,.split.reverse{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="logo-wrap">
+      <img src="images/kindpng_2290808.webp" class="logo-img">
+      <span class="logo-text">POPEYES PIZZA ’N’ KEBAB</span>
+    </div>
+
+    <nav>
+      <button class="nav-btn" onclick="location.href='index.html'"><p>Home</p><span>🏠</span></button>
+      <button class="nav-btn"onclick="location.href='about.html'"><p>About Us</p><span>ℹ️</span></button>
+      <button class="nav-btn" onclick="location.href='menu1.html'"><p>Menu</p><span>🍕</span></button>
+      <button class="nav-btn" onclick="location.href='contact.html'"><p>Contact</p><span>📞</span></button>
+    </nav>
+
+    <img src="images/halal.jpg" class="halal">
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+  <h1>POPEYES PIZZA ’N’ KEBAB</h1>
+ <div class="split-img">
+    <img src="images/kindpng_2290808.webp">
+  </div>
+  </section>
+
+
+<!-- SECTION 1 -->
+<section class="split">
+  <div class="split-img">
+    <img src="images/our story.webp" alt="Our Story">
+  </div>
+
+  <div class="split-text">
+    <h2>Our Story</h2>
+    <p>
+      Popeyes Pizza ’N’ Kebab was born from a deep respect for authentic flavors and a commitment to excellence.
+      Our passion lies in crafting indulgent yet comforting meals that leave a lasting impression.
+      Every dish reflects our dedication to quality, generosity, and refined taste.
+    </p>
+  </div>
+</section>
+
+
+<!-- SECTION 2 -->
+<section class="split reverse">
+  <div class="split-text2">
+    <h2>Crafted With Passion</h2>
+    <p>
+      Every pizza is carefully prepared, every kebab expertly seasoned, and every plate thoughtfully finished.
+      We combine tradition with modern techniques to deliver bold flavors that satisfy every craving.
+    </p>
+  </div>
+  <div class="split-img1">
+    <img src="images/Passion-Mission.jpg">
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section class="split">
+  <div class="split-img">
+    <img src="images/halal.jpg" alt="Our Story">
+  </div>
+
+  <div class="split-text">
+    <h2>100% HALAL</h2>
+    <p>
+      Proudly serving 100% Halal food, we focus on freshness, consistency, and premium standards —
+    because great food deserves great care.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="split reverse">
+  <div class="split-text2">
+    <h2>Why Choose Us</h2>
+    <p>
+       What sets us apart is our unwavering commitment to quality and consistency.
+      From our kitchen to your table, every dish delivers the same rich taste and satisfying experience.
+    </p>
+  </div>
+  <div class="split-img1">
+    <img src="images/why choose us.avif">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  ⚓ Eat Strong • Sailor Style • © 2026 Popeyes Pizza ’N’ Kebab
+</footer>
+
+</body>
+</html>
