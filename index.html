@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Popeye Halal Kitchen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --header-footer-bg:#3B563F;
+  --section-bg:#FFFFFF;
+  --text-dark:#2A3B2E;
+  --text-light:#FFFFFF;
+  --button-bg:#C9A24D;
+  --button-hover:#C9A24D;
+  --button-text:#000000;
+}
+
+/* ===== GLOBAL ===== */
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  color:var(--text-dark);
+}
+
+/* ===== BUTTONS ===== */
+button.nav-btn, .btn{
+  background:var(--button-bg);
+  border:1px solid var(--button-text);
+  position:relative;
+  min-width:7em;
+  height:2.3em;
+  padding:4px 16px 4px 40px;
+  border-radius:.4em;
+  cursor:pointer;
+  transition:.4s;
+  font-size:15px;
+  font-weight:500;
+  overflow:hidden;
+}
+
+button.nav-btn p, .btn p{
+  position:absolute;
+  top:.4em;
+  left:1.7em;
+  margin:0;
+  color:var(--button-text);
+  transition:.4s;
+}
+
+button.nav-btn span, .btn span{
+  position:absolute;
+  top:.45em;
+  right:.7em;
+  font-size:17px;
+  opacity:0;
+  transition:.4s;
+}
+
+button.nav-btn:hover, .btn:hover{
+  background:var(--button-hover);
+}
+
+button.nav-btn:hover p, .btn:hover p{
+  left:.5em;
+  color:#000000;
+}
+
+button.nav-btn:hover span, .btn:hover span{
+  opacity:1;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:var(--header-footer-bg);
+  padding:30px 20px;
+}
+
+.header-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-family:'Cinzel', serif;
+  font-size:36px;
+  color:#fff;
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+/* ===== HERO ===== */
+.hero{
+  padding:70px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+
+.hero-text{max-width:600px;}
+
+.hero-text h1{
+  font-family:'Cinzel', serif;
+  font-size:48px;
+}
+
+.tagline{
+  margin:12px 0 25px;
+  font-size:18px;
+  opacity:.85;
+}
+
+.hero-img img{
+  width:360px;
+  border-radius:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+/* ===== ATTRACTION ===== */
+.attract{
+  background:var(--header-footer-bg);
+  padding:60px 20px;
+  text-align:center;
+}
+
+.attract h2{
+  font-family:'Cinzel', serif;
+  font-size:30px;
+  color:#fff;
+}
+
+.attract p{
+  max-width:850px;
+  margin:auto;
+  color:#fff;
+  opacity:.9;
+}
+
+/* ===== DISH SLIDER ===== */
+.dish{
+  padding:70px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.dish-slider{
+  position:relative;
+  width:1300px;
+  height:700px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.dish-slider img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.dish-slider img.active{
+  opacity:1;
+}
+
+/* ===== OVERLAY ===== */
+.dish-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(28, 27, 27, 0.75), rgba(0,0,0,.15));
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:35px;
+  color:#fff;
+}
+
+.dish-overlay h3{
+  font-family:'Cinzel', serif;
+  font-size:32px;
+  margin:0 0 8px;
+}
+
+.dish-overlay p{
+  font-size:16px;
+  margin-bottom:18px;
+  max-width:500px;
+}
+
+/* 🔑 keeps button normal size */
+.dish-overlay .btn{
+  align-self:flex-start;
+}
+
+/* smooth text change */
+#dish-title,#dish-desc{
+  transition:opacity 1s ease-in-out;
+}
+/* ===== FOOTER ===== */
+footer{
+  background:var(--header-footer-bg);
+  text-align:center;
+  padding:30px;
+  color:#fff;
+  font-size:13px;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-text {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Cinzel', serif;
+    color:#fff;
+
+
+}
+
+.logo-img {
+  height: 100px;
+  width: auto;
+}
+
+.logo-img.halal {
+  height: 80px;
+}
+.dish-overlay .btn{
+  width:auto;
+  min-width:140px;
+  height:2.3em;
+  padding:4px 16px 4px 40px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+  .dish-slider{
+    width:100%;
+    height:420px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-top">
+<div class="logo-wrap">
+        <img src="images/kindpng_2290808.webp" class="logo-img" alt="">
+
+      <span class="logo-text">POPEYES PIZZA ’N’ KEBAB</span>
+</div>
+    <nav>
+      <button class="nav-btn" onclick="location.href='index.html'">
+  <p>Home</p><span>🏠</span>
+</button>
+
+<button class="nav-btn" onclick="location.href='about.html'">
+  <p>About Us</p><span>ℹ️</span>
+</button>
+
+<button class="nav-btn" onclick="location.href='menu1.html'">
+  <p>Menu</p><span>🍔</span>
+</button>
+
+<button class="nav-btn" onclick="location.href='contact.html'">
+  <p>Contact</p><span>📞</span>
+</button>
+
+    </nav>
+          <img src="images/halal.jpg" class="logo-img halal" alt="Halal">
+
+  </div>
+</header>
+<section class="dish">
+  <div class="dish-slider">
+    <img src="images/vecteezy_turkish-gozleme-flatbread_69067897.jpg" class="active">
+    <img src="images/KEBABS.jpg">
+    <img src="images/SALADS.jpg">
+    <img src="images/MEALS.jpg">
+    <img src="images/DRINKS.jpg">
+    <img src="images/HSP.jpg">
+    <img src="images/12435310-Classic-pizza-margherita-made-with-a-sourdough-base-tomato-sauce-with-oregano-and-olive-oil-mozzarella-cheese.jpg">
+
+    <div class="dish-overlay">
+      <h3 id="dish-title">Gozleme</h3>
+      <p id="dish-desc">Savory perfection in every fold.</p>
+      <button class="btn"><p>View Menu</p><span>🍔</span></button>
+    </div>
+  </div>
+</section>
+
+
+<section class="attract">
+  <h2>Hungry? You’re in the Right Place</h2>
+  <p>When cravings hit, you deserve food that delivers instant satisfaction. At Popeyes Pizza ’N’ Kebab, every dish is freshly prepared, generously loaded, and crafted with care to create bold, memorable flavors. From the first bite to the last, our food is designed to comfort, excite, and keep you coming back for more.</p>
+  <h2>Why Our Customers Love Us</h2>
+  <p>Consistency is at the heart of everything we serve. Our customers return for the rich flavors, premium quality, and attention to detail that never changes. Every visit promises the same unforgettable taste, warm service, and an experience you can trust and enjoy every time.</p>
+</section>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Where Every Bite Becomes an Addiction</h1>
+    <div class="tagline">Hot & fresh pizzas baked to perfection •Juicy kebabs • halal flavours</div>
+    <p>Welcome to Popeyes Pizza 'N' Kebab —
+a place where sizzling kebabs, cheesy pizzas, and rich spices come together to satisfy real cravings.
+Freshly prepared, generously loaded, and crafted to make you come back for more.</p>
+  </div>
+  <div class="hero-img">
+    <img src="images/kindpng_2290808.webp">
+  </div>
+</section>
+
+
+<footer>
+  📸 Instagram | 📞 Call | 💬 WhatsApp | 📍 Location <br>
+  © 2026 Popeye Halal Kitchen
+</footer>
+
+<script>
+const slides = document.querySelectorAll('.dish-slider img');
+
+const content = [
+  { title:"Gozleme", desc:"Savory perfection in every fold." },
+  { title:"Kebabs", desc:"Flame-grilled to perfection — every bite a taste of luxury." },
+  { title:"Salads", desc:"A delicate balance of flavor and freshness, crafted for excellence." },
+  { title:"Meals", desc:"A symphony of flavors, designed for the discerning palate." },
+  { title:"Drinks", desc:"Sips of elegance, perfectly paired with your meal." },
+  { title:"HSP", desc:"Decadent layers of flavor — a premium take on a classic favorite." },
+  { title:"Pizzas", desc:"Where artisanal dough meets rich, indulgent flavors." }
+];
+
+const titleEl = document.getElementById("dish-title");
+const descEl = document.getElementById("dish-desc");
+
+let i = 0;
+
+/* ensure initial state */
+slides[0].classList.add("active");
+titleEl.style.opacity = 1;
+descEl.style.opacity = 1;
+
+function changeSlide() {
+  const current = i;
+  const next = (i + 1) % slides.length;
+
+  /* fade text out */
+  titleEl.style.opacity = 0;
+  descEl.style.opacity = 0;
+
+  /* preload next image */
+  slides[next].classList.add("active");
+
+  setTimeout(() => {
+    /* remove previous image AFTER next is visible */
+    slides[current].classList.remove("active");
+
+    /* force reflow so transition always applies */
+    void titleEl.offsetWidth;
+
+    /* update text */
+    titleEl.textContent = content[next].title;
+    descEl.textContent = content[next].desc;
+
+    /* fade text in */
+    titleEl.style.opacity = 1;
+    descEl.style.opacity = 1;
+
+    i = next;
+  }, 600); // must match CSS transition timing
+}
+
+/* delay first transition so browser fully loads styles */
+setTimeout(() => {
+  setInterval(changeSlide, 3500);
+}, 500);
+</script>
+
+
+
+
+</body>
+</html>
